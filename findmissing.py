@@ -1,5 +1,5 @@
 #input seed phrase separated by spaces; i.e., "? survey coin divide biology album harbor fee profit nest claw mammal shaft basic diesel crater scatter modify bottom excuse hawk undo negative balance"
-seed_phrase = input("Please input your 23 words (separate by spaces) and leave ? as the missing word: ").lower()
+seed_phrase = input("Please input your seed in words (separate by spaces) and leave ? as the missing word: ").lower()
 
 seed_phrase = seed_phrase.split(" ")
 
@@ -36,7 +36,7 @@ else: #if the last word is not missing, do this
 
 entropy_possible = [bit_combination + missing_bits for missing_bits in missing_bits_possible for bit_combination in entropy_less_missing_bits_possible]
 
-#refer to SHA256 library for checksum
+#refer to SHA256 library (internal library in Python)
 import hashlib
 
 seed_phrase_binary_possible = [entropy + calc_checksum for entropy in entropy_possible if checksum == (calc_checksum := format(hashlib.sha256(int(entropy, 2).to_bytes(len(entropy) // 8, byteorder="big")).digest()[0],"08b")[:11-num_missing_bits]) or checksum == ""]
