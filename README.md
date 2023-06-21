@@ -1,7 +1,7 @@
 ## findmissing
 **Calculate the possible missing word**
 
-This is an extension part of calculating the possible last word; it is possible to find any missing word in 12, 15, 18, 21 or 24-word seed phrase.
+This is an extension part of calculating the possible last word; it can be used to find any missing word in 12, 15, 18, 21 or 24-word seed phrase.
 
 The code performs a series of operations on a user-provided seed phrase. It attempts to fill in a missing word in the seed phrase by generating all possible combinations and calculating their checksums.
 
